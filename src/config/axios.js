@@ -4,7 +4,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 
 const instance = axios.create({
-  baseURL: 'http://localhost:5000/api', // Remplacez par l'URL de votre backend
+  baseURL: 'https://muscu-gains-tracker.onrender.com/api', // Remplacez par l'URL de votre backend
 });
 
 // Ajouter un intercepteur pour toutes les requêtes sortantes

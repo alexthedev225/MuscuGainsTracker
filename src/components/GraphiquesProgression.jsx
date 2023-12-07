@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import {
   XYPlot,
   VerticalBarSeries,
@@ -18,16 +18,6 @@ const GraphiquePerformances = () => {
     // Appelle la fonction pour récupérer les données depuis le backend
     fetchData();
   }, [fetchData]);
-
-  const [width, setWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []); 
 
   const prepareData = () => {
     return dernieresPerformances.map((performance) => ({

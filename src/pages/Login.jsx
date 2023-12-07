@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 
@@ -17,7 +17,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/users/login",
+        "https://muscu-gains-tracker.onrender.com/api/users/login",
         formData
       );
       const { token, userId, username, profileImage } = response.data;
