@@ -22,13 +22,10 @@ const Login = () => {
       );
       const { token, userId, username, profileImage } = response.data;
 
-      // Stockez le token dans un cookie avec une durée d'expiration (7 jours)
-      Cookies.set("token", token);
-
       // Stockez les informations dans des cookies sécurisés et HttpOnly
-      Cookies.set("token", token, { secure: true, httpOnly: true });
+      Cookies.set("token", token, { secure: true });
       Cookies.set("userId", userId, {
-        secure: true
+        secure: true,
       });
       Cookies.set("username", username, {
         secure: true,

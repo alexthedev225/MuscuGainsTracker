@@ -4,10 +4,20 @@ import styles from "../styles/Profil.module.css";
 import Cookies from "js-cookie";
 
 export default function Profil() {
-  const username = Cookies.get('username')
+  const username = Cookies.get("username");
+  const imgUrl = Cookies.get("profileImage");
+  console.log(imgUrl);
+
   return (
     <div className={styles.profil}>
-      <h1 className={styles.bienvenue}>Bienvenue sur votre page de profil {username} !</h1>
+      {imgUrl && (
+        <div className={styles.photo}>
+          <img src={imgUrl} alt={`Photo de profil de - ${username}`} />
+        </div>
+      )}
+      <h1 className={styles.bienvenue}>
+        Bienvenue sur votre page de profil {username} !
+      </h1>
       <p className={styles.description}>
         Ici, vous pouvez suivre votre progression en musculation, visualiser vos
         performances au fil du temps et gérer vos informations personnelles.
